@@ -18,16 +18,16 @@ end
 
 % 3. Sonucu MATLAB'ın yerleşik exp(x) fonksiyonu ile karşılaştırın.
 
-gercek_deger = exp(x);  % MATLAB'ın hazır exp(x) fonksiyonu ile gerçek değeri hesaplama 
+gercek_deger = exp(x);  
 
 disp(['Taylor Serisi sonucu: ', num2str(toplam)]);  
 disp(['Gerçek exp(x) değeri: ', num2str(gercek_deger)]);  
 
 % 4. Grafik Çizimi
 
-x_noktalari = -3:0.1:3;  % X ekseni için -3 ile 3 aralığında noktaların belirlenmesi.
+x_noktalari = -3:0.1:3;  
 
-y_gercek = exp(x_noktalari);  % Gerçek e^x fonksiyonunun bu aralıktaki değerlerinin hesaplanması.
+y_gercek = exp(x_noktalari);  %  e^x fonksiyonunun bu aralıktaki değerlerinin hesaplanması.
 
 taylor_grafik = zeros(size(x_noktalari));  
 
@@ -43,7 +43,7 @@ for k = 1:length(x_noktalari)
     taylor_grafik(k) = anlik_toplam;
 end
 
-figure(1);  % 1 Numaralı grafik penceresi açılması.
+figure(1);  % 1 no lu grafik penceresi açılması
 
 plot(x_noktalari, y_gercek, 'b-', 'LineWidth', 2);  % Gerçek e^x eğrisinin çizdirilmesi.
 
@@ -54,6 +54,6 @@ plot(x_noktalari, taylor_grafik, 'r--', 'LineWidth', 2);  % Taylor serisi ile bu
 xlabel('x');  % x ekseni etiketi
 ylabel('f(x)');  % y ekseni etiketi
 
-legend('Gerçek e^x Eğrisi', 'Taylor Serisi Yaklaşımı');  % Grafik açıklaması
+legend('Gerçek e^x Eğrisi', 'Taylor Serisi Yaklaşımı');  
 
-grid on;  % Grafiğe kareli arka plan eklenmesi
+grid on;  % Grafiğe arka plan eklenmesi
